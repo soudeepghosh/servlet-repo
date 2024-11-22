@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>FilterDispatcherTagApp</display-name>
+  <servlet>
+    <servlet-name>ForwardIncludeServlet</servlet-name>
+    <servlet-class>in.pwskills.nitin.controller.ForwardIncludeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForwardIncludeServlet</servlet-name>
+    <url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>TargetServlet</servlet-name>
+    <servlet-class>in.pwskills.nitin.controller.TargetServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>TargetServlet</servlet-name>
+    <url-pattern>/test2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ExceptionServlet</servlet-name>
+    <servlet-class>in.pwskills.nitin.controller.ExceptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExceptionServlet</servlet-name>
+    <url-pattern>/test3</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  	<exception-type>java.lang.ArithmeticException</exception-type>
+  	<location>/test2</location>
+  </error-page>
+  
+  
+  <filter>
+    <filter-name>DemoFilter</filter-name>
+    <filter-class>in.pwskills.nitin.filter.DemoFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>DemoFilter</filter-name>
+    <url-pattern>/test2</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+</web-app>

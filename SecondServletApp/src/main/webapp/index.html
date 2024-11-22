@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body bgcolor="green" text="white">
+	<h1 style="text-align: center;">Welcome to PWSkills Registration
+		Page</h1>
+	<form method="POST" action="./input">
+		<table>
+			<tr>
+				<th>NAME</th>
+				<td><input type='text' name='username' /></td>
+			</tr>
+			<tr>
+				<th>CONTACT NUMBER</th>
+				<td><input type="number" name='contactnumber' /></td>
+			</tr>
+			<tr>
+				<th>COURSES</th>
+				<td><select name="courses" multiple="multiple">
+						<option value="COREJAVA">COREJAVA</option>
+						<option value="ADVANCEDJAVA">ADVANCEDJAVA</option>
+						<option value="HIBERNATE">HIBERNATE</option>
+						<option value="SPRING">SPRING</option>
+						<option value="SPRINGBOOT">SPRINGBOOT</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><input type="submit" value='register' /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

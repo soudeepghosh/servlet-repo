@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>INDEX PAGE</title>
+</head>
+<body>
+	<h1 style="color:red; text-align: center">FILE UPLOADING USING ZOOM API</h1>
+	<form method='post' action ='./upload' enctype="multipart/form-data">
+		<table  border='1' bgcolor='cyan' align='center'>
+			<tr>
+				<th>NAME</th>
+				<td>
+					<input type='text' name='username'/>
+				</td>
+			</tr>
+			<tr>
+				<th>ADDRESS</th>
+				<td>
+					<input type='text' name='useraddr'/>
+				</td>
+			</tr>
+			<tr>
+				<th>SELECT RESUME FILE</th>
+				<td>
+					<input type='file' name='userresume'/>
+				</td>
+			</tr>
+			<tr>
+				<th>SELECT PHOTO FILE</th>
+				<td>
+					<input type='file' name='userphoto'/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type='submit' value='upload'/>
+					<input type='reset' value='cancel'/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

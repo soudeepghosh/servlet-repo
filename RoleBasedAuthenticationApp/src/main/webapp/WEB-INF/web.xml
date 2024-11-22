@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	
+	<display-name>RoleBasedAuthenticationApp</display-name>
+	<servlet>
+		<servlet-name>BankingApp</servlet-name>
+		<servlet-class>in.pwskills.nitin.controller.ShowBalanceApp</servlet-class>
+
+		<security-role-ref>
+			<!-- logical name -->
+			<role-name>manager</role-name>
+			<!-- actual rolename -->
+			<role-link>managerole</role-link>
+		</security-role-ref>
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BankingApp</servlet-name>
+		<url-pattern>/showBalance</url-pattern>
+	</servlet-mapping>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>SHOWBALANCE</web-resource-name>
+			<url-pattern>/showBalance</url-pattern>
+			<http-method>POST</http-method>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>managerole</role-name>
+			<role-name>adminrole</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+
+	<security-role>
+		<role-name>managerole</role-name>
+	</security-role>
+	
+	<security-role>
+		<role-name>adminrole</role-name>
+	</security-role>
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/403_error.jsp</location>
+	</error-page>
+</web-app>

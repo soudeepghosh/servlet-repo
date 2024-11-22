@@ -1,0 +1,33 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+         
+    <security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>SHOWBALANCE</web-resource-name>
+    		<url-pattern>/showBalance</url-pattern>
+    		<http-method>POST</http-method>
+    		<http-method>GET</http-method>
+    	</web-resource-collection>
+    	
+    	<auth-constraint>
+    		<role-name>managerole</role-name>
+    	</auth-constraint>
+    </security-constraint> 
+    
+    <login-config>
+    	<auth-method>DIGEST</auth-method>
+    </login-config> 
+    
+    <security-role>
+    	<role-name>managerole</role-name>
+    </security-role> 
+    
+    <error-page>
+    	<error-code>403</error-code>
+    	<location>/403_error.jsp</location>
+    </error-page>  
+          
+</web-app>

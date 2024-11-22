@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>SixthServletApp</display-name>
+
+	<!-- ServletContext Data -->
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>nitin</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>nitin@123</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>email</param-name>
+		<param-value>nitin@pw.live</param-value>
+	</context-param>
+
+
+	<servlet>
+		<servlet-name>DemoServlet</servlet-name>
+		<servlet-class>in.pwskills.nitin.controller.FirstServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DemoServlet</servlet-name>
+		<url-pattern>/demo</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>in.pwskills.nitin.controller.SecondServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+
+</web-app>
